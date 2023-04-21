@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Event Management Console</h1>
+        <section aria-labelledby="event-request-queue-heading" style="border: 1px solid grey">
+            <h2 id="event-request-queue-heading">Event Request Queue</h2>
+            <ul id="event-request-queue">
+
+            </ul>
+            <form id="add-event-form" aria-label="Add event form">
+                <label>
+                    Event Name
+                    <input type="text" name="eventName"></input>
+                </label>
+                <label>
+                    Priority
+                    <select name="priority">
+                        <option value="0">Normal (0)</option>
+                        <option value="5">Short timescale (5)</option>
+                        <option value="10">Lucrative Event (10)</option>
+                        <option value="20">VIP (20)</option>
+                    </select>
+                </label>
+                <button type="submit">Add Event</button>
+            </form>
+            <button type="button" id="process-next-event">Process Next Event</button>
+        </section>
+        <section aria-labelledby="best-route-calculator-heading" style="border: 1px solid grey; margin-top: 8px;">
+            <h2 id="best-route-calculator-heading">Best Route Calculator</h2>
+            <p>
+                Click the icons below to select the locations of today's events.  After you've selected all the locations, click the below button to calculate the approximate quickest route:
+                <button id="calculate-approximate-quickest-route">Calculate Approximate Quickest Route</button>
+                <div id="approximate-quickest-route-result"></div>
+            </p>
+            <div style="position: relative; width: 900px; height: 500px">
+                <button id="barber" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 20px; top: 20px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/barber.png">
+                </button>
+                <button id="blue-building" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 200px; top: 30px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/blue-building.png">
+                </button>
+                <button id="burger-place" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 470px; top: 80px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/burger-place.png">
+                </button>
+                <button id="post-office" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 800px; top: 20px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/post-office.png">
+                </button>
+                <button id="market" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 11px; top: 200px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/market.png">
+                </button>
+                <button id="icecream-place" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; top: 300px; left: 200px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/icecream-place.png">
+                </button>
+                <button id="nursery" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 400px; top: 200px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/nursery.png">
+                </button>
+                <button id="pink-building" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 600px; top: 300px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/pink-building.png">
+                </button>
+                <button id="pizza-place" class="location-node" style="background: none; border: 1px solid transparent; position: absolute; left: 800px; top: 150px" type="button">
+                    <img style="width: 80px; height: 80px" src="./images/pizza-place.png">
+                </button>
+            </div>
+        </section>
+        <section aria-labelledby="event-request-queue-heading" style="border: 1px solid grey; margin-top: 8px">
+            <h2 id="event-request-queue-heading">Event Search</h2>
+            <form id="search-events-form" aria-label="Search events">
+                <label>
+                    Min time
+                    <input type="text" name="minTime" aria-describedby="minTimeDescription"></input>
+                </label>
+                <div id="minTimeDescription">Format: HH:MM (24-Hour Time)</div>
+                <label>
+                    Max time
+                    <input type="text" name="maxTime" aria-labelledby="maxTimeDescription"></input>
+                </label>
+                <div id="maxTimeDescription">Format: HH:MM (24-Hour Time)</div>
+                <button type="submit">Search events</button>
+            </form>
+            <h3>Search Results:</h3>
+            <ul id="searchResults">
+                
+            </ul>
+        </section>
+    </head>
+    <body>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>
